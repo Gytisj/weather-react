@@ -1,0 +1,16 @@
+.card {
+  width: 24%;
+  box-shadow: 1px 2px 4px gray;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2%;
+}
+.image {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

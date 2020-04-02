@@ -1,16 +1,13 @@
-.card {
-  width: 24%;
-  box-shadow: 1px 2px 4px gray;
-  border-radius: 5px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2%;
+.background {
+  /* background: linear-gradient(to right, #e9f8ff, #90b2d8, #c1e3ff); */
+  background: url('../../components/shared/pics/kenrick-mills-MF9Wy1NA55I-unsplash.jpg')
+    no-repeat center center fixed;
+  background-size: cover;
 }
-.image {
-  width: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.form {
+  padding-top: 8%;
+  width: 400px;
+}
+.btn {
+  margin-left: 20px;
 }

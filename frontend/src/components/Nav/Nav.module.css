@@ -1,1 +1,29 @@
-
+.navContainer {
+  height: 7vh;
+  position: fixed;
+  background: linear-gradient(to right, #e9f8ff, #90b2d8, #c1e3ff);
+}
+.links {
+  display: flex;
+  width: 50%;
+  margin-left: 25%;
+  justify-content: space-between;
+}
+.link {
+  color: Black;
+  font-weight: 600;
+  font-size: 25px;
+}
+.link:hover {
+  color: white;
+  text-decoration: none;
+}
+.favorites {
+  height: 7vh;
+  position: fixed;
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}

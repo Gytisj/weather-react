@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import c from './index.css'
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App className={c.background} />
   </Provider>,
   document.getElementById('root')
 )

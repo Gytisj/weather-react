@@ -1,0 +1,15 @@
+.loginContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.color {
+  color: white;
+}
+.image {
+  background: url('../../components/shared/pics/tom-barrett-hgGplX3PFBg-unsplash.jpg')
+    no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}

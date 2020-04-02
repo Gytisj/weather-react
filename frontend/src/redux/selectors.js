@@ -1,1 +1,1 @@
-export const getIsLoggedIn = state => state.checkIfLoggedIn
+export const getLoadedCities = state => state.favorites

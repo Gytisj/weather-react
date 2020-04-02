@@ -1,0 +1,30 @@
+.card {
+  width: 24%;
+  box-shadow: 1px 2px 4px gray;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2%;
+  margin-top: 1%;
+  background: white;
+}
+.image {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container {
+  padding: 5%;
+  min-height: 81.7vh;
+  max-height: 100%;
+}
+
+.fullScreen {
+  height: 100%;
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}

@@ -1,6 +1,6 @@
 import * as actionTypes from '../actionTypes'
 
-const LoggedInInitialState = { isLoggedIn: true }
+const LoggedInInitialState = { isLoggedIn: false }
 
 export default (state = LoggedInInitialState, action) => {
   switch (action.type) {

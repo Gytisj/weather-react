@@ -23,6 +23,11 @@ router.patch(
   middleware.authenticate,
   favoritesController.addCity
 )
+router.patch(
+  '/favorites/removeCity',
+  middleware.authenticate,
+  favoritesController.removeCity
+)
 router.get(
   '/favorites/getAllCities',
   middleware.authenticate,

@@ -19,11 +19,9 @@ const UserSchema = new mongoose.Schema({
       }
     }
   ],
-  favoriteWeather: [
-    {
-      city: { type: Object, required: false }
-    }
-  ]
+  favoriteWeather: {
+    city: { type: Object, required: false }
+  }
 })
 
 UserSchema.pre('save', function(next) {

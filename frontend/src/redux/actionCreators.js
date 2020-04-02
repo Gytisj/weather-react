@@ -9,3 +9,8 @@ export const IfLoggedOutAction = checkIfLoggedOut => ({
   type: actionTypes.TOGGLE_LOGGED_OUT,
   checkIfLoggedOut
 })
+
+export const loadFavoriteCitiesAction = allFavoriteCities => ({
+  type: actionTypes.LOAD_FAVORITE_CITIES,
+  allFavoriteCities
+})

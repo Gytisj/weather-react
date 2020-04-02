@@ -1,11 +1,11 @@
 import commonReducer from './reducers/reducer-common'
-import clientReducer from './reducers/cart-reducer'
+import favoriteCitiesReducer from './reducers/favoriteCities-reducer'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
 const rootReducer = combineReducers({
   common: commonReducer,
-  client: clientReducer
+  favorites: favoriteCitiesReducer
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk))

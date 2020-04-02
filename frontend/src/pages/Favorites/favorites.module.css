@@ -1,0 +1,12 @@
+.container {
+  background: url('../../components/shared/pics/kenrick-mills-MF9Wy1NA55I-unsplash.jpg')
+    no-repeat center center fixed;
+  background-size: cover;
+}
+.form {
+  padding-top: 8%;
+  width: 400px;
+}
+.btn {
+  margin-left: 20px;
+}

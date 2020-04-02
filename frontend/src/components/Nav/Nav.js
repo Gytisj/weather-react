@@ -1,14 +1,16 @@
 import React from 'react'
-import classes from './Nav.module.css'
+import c from './Nav.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from 'reactstrap'
 import { Flex } from '../shared/Flex/Flex'
 import { useDispatch } from 'react-redux'
 import * as actionTypes from '../../redux/actionTypes'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 export const Nav = () => {
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const logoutHandler = event => {
     event.preventDefault()
@@ -41,13 +43,23 @@ export const Nav = () => {
   return (
     <Flex
       justify='space-between'
-      className={classes.navContainer}
+      className={
+        history.location.pathname === '/favorites'
+          ? c.favorites
+          : c.navContainer
+      }
       align='center'
     >
-      <Link to='/'>Region weather</Link>
-      <Link to='/favorites'>Favorites</Link>
+      <div className={c.links}>
+        <Link to='/' className={c.link}>
+          Region weather
+        </Link>
+        <Link to='/favorites' className={c.link}>
+          Favorites
+        </Link>
+      </div>
 
-      <Button color='primary' onClick={logoutHandler}>
+      <Button color='danger' onClick={logoutHandler}>
         Log out
       </Button>
     </Flex>

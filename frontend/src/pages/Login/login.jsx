@@ -3,6 +3,8 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import * as actionTypes from '../../redux/actionTypes'
+import { Flex } from '../../components/shared/Flex/Flex'
+import c from './login.module.css'
 
 export const Login = () => {
   const history = useHistory()
@@ -68,39 +70,44 @@ export const Login = () => {
       })
   }
   return (
-    <Form inline>
-      <FormGroup>
-        <Label for='exampleUsername' hidden>
-          Email
-        </Label>
-        <Input
-          type='username'
-          name='username'
-          id='exampleUsername'
-          placeholder='Username'
-          value={formState.username}
-          onChange={usernameInputHandler}
-        />
-      </FormGroup>{' '}
-      <FormGroup>
-        <Label for='examplePassword' hidden>
-          Password
-        </Label>
-        <Input
-          type='password'
-          name='password'
-          id='examplePassword'
-          placeholder='Password'
-          value={formState.password}
-          onChange={passwordInputHandler}
-        />
-      </FormGroup>{' '}
-      <Button color='primary' onClick={login}>
-        Log In
-      </Button>
-      <Button color='primary' onClick={goToRegister}>
-        Register New User
-      </Button>
-    </Form>
+    <Flex justify='center' align='center' className={c.image}>
+      <div className={c.loginContainer}>
+        <h1 className={c.color}> Wheather online, save, check later! </h1>
+        <Form inline>
+          <FormGroup>
+            <Label className={c.color} for='exampleUsername' hidden>
+              Email
+            </Label>
+            <Input
+              type='username'
+              name='username'
+              id='exampleUsername'
+              placeholder='Username'
+              value={formState.username}
+              onChange={usernameInputHandler}
+            />
+          </FormGroup>{' '}
+          <FormGroup>
+            <Label lassName={c.color} for='examplePassword' hidden>
+              Password
+            </Label>
+            <Input
+              type='password'
+              name='password'
+              id='examplePassword'
+              placeholder='Password'
+              value={formState.password}
+              onChange={passwordInputHandler}
+            />
+          </FormGroup>{' '}
+          <Button color='primary' onClick={login}>
+            Log In
+          </Button>
+          <Button color='primary' onClick={goToRegister}>
+            Register New User
+          </Button>
+        </Form>
+      </div>
+    </Flex>
   )
 }

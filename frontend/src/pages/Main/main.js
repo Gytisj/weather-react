@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from 'reactstrap'
 import { Flex } from '../../components/shared/Flex/Flex'
-import { getCitiesWeatherData } from '../../redux/actions/actions'
-import { random } from 'faker'
+import { getCitiesWeatherData } from '../../components/shared/utils/utils'
+import { Cards } from '../../components/Card/Card'
 import c from './main.module.css'
 
 export const Main = () => {
@@ -23,6 +23,7 @@ export const Main = () => {
 
   const formSubmitHandler = async event => {
     event.preventDefault()
+
     const regionData = await fetch(
       `https://restcountries.eu/rest/v2/region/${regionState.region}`
     )
@@ -30,14 +31,7 @@ export const Main = () => {
       const newRegionData = await regionData.json()
       const resultNotChecked = await getCapitalsData(newRegionData)
       const result = resultNotChecked.filter(city => {
-        if (city.cod === '404') {
-          return null
-        }
-        if (city.cod === '400') {
-          return null
-        } else {
-          return city
-        }
+        return city
       })
       result.sort((a, b) => {
         if (a.name < b.name) {
@@ -65,58 +59,24 @@ export const Main = () => {
 
   return (
     <>
-      <Flex justify='center' align='center'>
-        <form>
-          <input type='text' onChange={inputChangeHandler}></input>
-          <Button type='submit' color='secondary' onClick={formSubmitHandler}>
-            Search Region
-          </Button>
-        </form>
-      </Flex>
-      <Flex justify='space-around' wrap='wrap'>
-        {regionCapitalState.map(city => {
-          return (
-            <div className={c.card} key={random.uuid()}>
-              <Flex>
-                <img
-                  className={c.image}
-                  src={
-                    'http://openweathermap.org/img/w/' +
-                    city.weather[0].icon +
-                    '.png'
-                  }
-                  alt=''
-                />
-                <img
-                  className={c.image}
-                  src={
-                    'http://openweathermap.org/img/w/' +
-                    city.weather[0].icon +
-                    '.png'
-                  }
-                  alt=''
-                />
-                <img
-                  className={c.image}
-                  src={
-                    'http://openweathermap.org/img/w/' +
-                    city.weather[0].icon +
-                    '.png'
-                  }
-                  alt=''
-                />
-              </Flex>
-              <h2>{city.name}</h2>
-              <p>
-                Temperature is: {Math.round(city.main.temp)}°C <br /> Feels
-                Like: {Math.round(city.main.feels_like)}°C
-              </p>
-              <p>Description: {city.weather[0].description}</p>
-              <Button color='primary'>Add To Favorites!</Button>
-            </div>
-          )
-        })}
-      </Flex>
+      <div className={c.background}>
+        <Flex justify='center' align='center'>
+          <form className={c.form}>
+            <input type='text' onChange={inputChangeHandler}></input>
+            <Button
+              className={c.btn}
+              type='submit'
+              color='warning'
+              onClick={formSubmitHandler}
+            >
+              Search Region
+            </Button>
+          </form>
+        </Flex>
+        <Flex justify='center' align='center'>
+          <Cards cities={regionCapitalState} component={'main'} />
+        </Flex>
+      </div>
     </>
   )
 }
